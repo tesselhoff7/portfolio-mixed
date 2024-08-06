@@ -55,12 +55,32 @@
 
 .colorModeContainer {
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+  }
 }
 
-.colorMode {
+.inner-btns {
   position: absolute;
+  top: 0;
   right: 0;
-  width: 25px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .colorMode {
+    width: 25px;
+  }
 }
 
 .colorMode:hover {

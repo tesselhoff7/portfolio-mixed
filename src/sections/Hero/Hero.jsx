@@ -1,4 +1,4 @@
-import styles from "./HeroStyles.module.scss";
+import "./HeroStyles.scss";
 import heroImg from "../../assets/hero-img5.png";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
@@ -15,26 +15,31 @@ function Hero() {
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = theme === "light" ? sun : moon;
-  const twitterIcon = theme === "light" ? twitterLight : twitterDark;
   const githubIcon = theme === "light" ? githubLight : githubDark;
   const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark;
 
   return (
-    <section id="hero" className={styles.container}>
-      <div className={styles.colorModeContainer}>
-        <img
-          src={heroImg}
-          className={styles.hero}
-          alt="Profile picture of Harris Johnsen"
-        />
-        <img
-          className={styles.colorMode}
-          src={themeIcon}
-          alt="Color mode icon"
-          onClick={toggleTheme}
-        />
+    <section id="hero" className="container">
+      <div className="colorModeContainer">
+        <div className="inner-container">
+          <img
+            src={heroImg}
+            className="hero"
+            alt="Profile picture of Harris Johnsen"
+          />
+          <div className="inner-btns">
+            <img
+              className="colorMode"
+              src={themeIcon}
+              alt="Color mode icon"
+              onClick={toggleTheme}
+            />
+            <span>ENG</span>
+            <span>KR</span>
+          </div>
+        </div>
       </div>
-      <div className={styles.info}>
+      <div className="info">
         <h1>
           Pak
           <br />
@@ -42,9 +47,6 @@ function Hero() {
         </h1>
         <h2>Frontend Developer</h2>
         <span>
-          <a href="https://twitter.com/" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a>
           <a href="https://github.com/" target="_blank">
             <img src={githubIcon} alt="Github icon" />
           </a>
@@ -52,7 +54,7 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-        <p className={styles.description}>
+        <p className="description">
           Front End Web Developer with a keen eye for creating intuitive,
           interactive and engaging user interfaces. Detail-oriented and always
           eager to learn and adapt to new technologies to bring innovative

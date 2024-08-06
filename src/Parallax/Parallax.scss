@@ -1,0 +1,98 @@
+/* Parallax.css */
+.parallax-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 500px;
+}
+
+.rows-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  //flex-grow: 1;
+}
+
+.parralax-title {
+  margin: 80px;
+}
+
+.parallax-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.parallax-item {
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  margin: 0 10px;
+  text-align: center;
+  min-width: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-item.in-view {
+  opacity: 1;
+}
+
+.parallax-item.out-view {
+  opacity: 0;
+  transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.parallax-item.left {
+  transform: translateX(-100%);
+}
+
+.parallax-item.right {
+  transform: translateX(100%);
+}
+
+.parallax-item.in-view.left {
+  transform: translateX(0);
+}
+
+.parallax-item.in-view.right {
+  transform: translateX(0);
+}
+
+.parallax-item.out-view.left {
+  transform: translateX(-100%);
+}
+
+.parallax-item.out-view.right {
+  transform: translateX(100%);
+}
+
+.parallax-image {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+}
+
+.parallax-text {
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .parallax-item {
+    max-width: 80px;
+    min-width: unset !important;
+    //border: 1px solid red;
+  }
+
+  .parallax-row:last-child {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

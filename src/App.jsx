@@ -11,6 +11,7 @@ import "./utils/i18n";
 import AnimatedCursor from "react-animated-cursor";
 import Parallax from "./Parallax/Parallax";
 import Touch from "./sections/Touch/Touch";
+import Navbar from "./Navbar/Navbar";
 
 function App() {
   useEffect(() => {
@@ -64,6 +65,7 @@ function App() {
       />
       <section id="hero">
         <Hero />
+        <Navbar />
       </section>
 
       <section id="parallax">
@@ -85,10 +87,8 @@ function App() {
       <section id="touch">
         <Touch />
       </section>
-      {/*
-      <section id="footer">
-        <Footer />
-      </section>*/}
+
+      <Footer />
     </>
   );
 }

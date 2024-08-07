@@ -80,15 +80,15 @@ function App() {
       <Portfolio />
       {/*</section>*/}
 
-      <section id="contact">
+      {/*<section id="contact">
         <Contact />
-      </section>
+      </section>*/}
 
       <section id="touch">
         <Touch />
       </section>
 
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }

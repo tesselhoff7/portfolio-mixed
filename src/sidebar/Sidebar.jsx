@@ -30,6 +30,7 @@ const Sidebar = () => {
       <motion.div className="bg" variants={variants}>
         <Links />
       </motion.div>
+
       <ToggleButton setOpen={setOpen} />
     </motion.div>
   );

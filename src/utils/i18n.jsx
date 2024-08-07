@@ -8,7 +8,8 @@ const resources = {
   en: {
     translation: {
       greetings: "Welcome",
-      myName: "Viacheslav Pak",
+      firstName: "Viacheslav",
+      lastName: "Pak",
       jobTitle: "Frontend Developer",
       latestWork: "See the Latest Works",
       contactMe: "Contact Me",
@@ -43,7 +44,8 @@ const resources = {
   kr: {
     translation: {
       greetings: "안녕하세요",
-      myName: "박승현",
+      firstname: "",
+      lastName: "박승현",
       jobTitle: "프론트엔드 개발자",
       latestWork: "개발 프로젝트 보기",
       contactMe: "연락하기",

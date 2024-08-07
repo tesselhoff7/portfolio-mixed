@@ -13,9 +13,12 @@ import CV from "../../assets/cv.pdf";
 import resume_eng from "../../assets/resume_eng.pdf";
 import resume_kr from "../../assets/resume_kr.pdf";
 import { useTheme } from "../../common/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+
+  const { t, i18n } = useTranslation();
 
   const themeIcon = theme === "light" ? sun : moon;
   const githubIcon = theme === "light" ? githubLight : githubDark;
@@ -54,6 +57,11 @@ function Hero() {
     fetchFileSize(resume_kr, setKrFileSize);
   }, []);
 
+  const getTranslation = (key) => {
+    const translated = t(key);
+    return translated === key ? "" : translated;
+  };
+
   return (
     <section id="hero" className="container">
       <div className="colorModeContainer">
@@ -72,18 +80,28 @@ function Hero() {
                 onClick={toggleTheme}
               />
             </button>
-            <span>ENG</span>
-            <span>KR</span>
+            <button
+              className="language-switch eng"
+              onClick={() => i18n.changeLanguage("en")}
+            >
+              <p>ENG</p>
+            </button>
+            <button
+              className="language-switch kr"
+              onClick={() => i18n.changeLanguage("kr")}
+            >
+              <p>KR</p>
+            </button>
           </div>
         </div>
       </div>
       <div className="info">
         <h1>
-          Pak
+          {getTranslation("firstName")}
           <br />
-          Viacheslav
+          {t("lastName")}
         </h1>
-        <h2>Frontend Developer</h2>
+        <h2>{t("jobTitle")}</h2>
         <span>
           <a
             href="https://github.com/"

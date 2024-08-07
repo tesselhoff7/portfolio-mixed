@@ -11,6 +11,37 @@
     max-width: 200px;
   }
 
+  .language-switch {
+    all: unset;
+  }
+
+  .language-switch p {
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    animation: pulse 2.5s infinite;
+  }
+
+  .eng p {
+    animation-delay: 0s; /* No delay for ENG button */
+  }
+
+  .kr p {
+    animation-delay: 1s; /* Delay for KR button to create alternating effect */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   span {
     display: flex;
     gap: 25px;
@@ -48,7 +79,7 @@
       border-radius: 42px;
       font-family: inherit;
       font-size: 28px;
-      //cursor: pointer;
+      cursor: none;
       transition: background 0.3s;
     }
 

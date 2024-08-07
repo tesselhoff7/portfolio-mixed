@@ -45,6 +45,10 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
   const { t } = useTranslation();
 
+  const handleClick = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section>
       <div className="container">
@@ -69,10 +73,13 @@ const Single = ({ item }) => {
                 <p className="desc">{t(item.stack)}</p>
               </div>
             </div>
-            <button style={{ margin: "auto", marginTop: "30px" }}>
-              <a rel="noreferrer" target="_blank" href={item.link}>
-                Visit Homepage
-              </a>
+            <button
+              style={{ margin: "auto", marginTop: "30px" }}
+              onClick={() => handleClick(item.link)}
+            >
+              {/*<a rel="noreferrer" target="_blank" href={item.link}>*/}
+              Visit Homepage
+              {/*</a>*/}
             </button>
           </motion.div>
         </div>

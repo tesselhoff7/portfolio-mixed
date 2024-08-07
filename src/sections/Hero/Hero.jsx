@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import "./HeroStyles.scss";
 import heroImg from "../../assets/hero-img5.png";
 import sun from "../../assets/sun.svg";
@@ -20,6 +21,39 @@ function Hero() {
   const githubIcon = theme === "light" ? githubLight : githubDark;
   const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark;
 
+  const [engFileSize, setEngFileSize] = useState("Calculating...");
+  const [krFileSize, setKrFileSize] = useState("Calculating...");
+
+  useEffect(() => {
+    const fetchFileSize = async (url, setSize) => {
+      try {
+        const response = await fetch(url, { method: "HEAD" });
+        if (response.ok) {
+          const size = response.headers.get("content-length");
+          if (size) {
+            const sizeInBytes = parseInt(size, 10);
+            if (sizeInBytes < 1024 * 1024) {
+              const sizeInKB = (sizeInBytes / 1024).toFixed(2);
+              setSize(`Size: ${sizeInKB} KB`);
+            } else {
+              const sizeInMB = (sizeInBytes / (1024 * 1024)).toFixed(2);
+              setSize(`Size: ${sizeInMB} MB`);
+            }
+          } else {
+            setSize("Size: Unknown");
+          }
+        } else {
+          setSize("Size: Unknown");
+        }
+      } catch (error) {
+        setSize("Size: Unknown");
+      }
+    };
+
+    fetchFileSize(resume_eng, setEngFileSize);
+    fetchFileSize(resume_kr, setKrFileSize);
+  }, []);
+
   return (
     <section id="hero" className="container">
       <div className="colorModeContainer">
@@ -30,12 +64,14 @@ function Hero() {
             alt="Profile picture of Harris Johnsen"
           />
           <div className="inner-btns">
-            <img
-              className="colorMode"
-              src={themeIcon}
-              alt="Color mode icon"
-              onClick={toggleTheme}
-            />
+            <button className="hidden-btn">
+              <img
+                className="colorMode"
+                src={themeIcon}
+                alt="Color mode icon"
+                onClick={toggleTheme}
+              />
+            </button>
             <span>ENG</span>
             <span>KR</span>
           </div>
@@ -49,10 +85,18 @@ function Hero() {
         </h1>
         <h2>Frontend Developer</h2>
         <span>
-          <a href="https://github.com/" target="_blank">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={githubIcon} alt="Github icon" />
           </a>
-          <a href="https://linkedin.com/" target="_blank">
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
@@ -64,25 +108,25 @@ function Hero() {
         </p>
         <div className="resume-btns">
           <a href={resume_eng} download className="download-resume">
-            <div class="btn-4" data-tooltip="Size: 20Mb">
-              <div class="button-wrapper">
-                <div class="text">Download</div>
-                <span class="icon">
+            <div className="btn-4" data-tooltip={engFileSize}>
+              <div className="button-wrapper">
+                <div className="text">ENG</div>
+                <span className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                     role="img"
-                    width="2em"
-                    height="2em"
+                    width="44px"
+                    height="44px"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"
                     ></path>
                   </svg>
@@ -92,25 +136,25 @@ function Hero() {
           </a>
 
           <a href={resume_kr} download className="download-resume">
-            <div class="btn-4" data-tooltip="Size: 20Mb">
-              <div class="button-wrapper">
-                <div class="text">Download</div>
-                <span class="icon">
+            <div className="btn-4" data-tooltip={krFileSize}>
+              <div className="button-wrapper">
+                <div className="text">KR</div>
+                <span className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                     role="img"
-                    width="2em"
-                    height="2em"
+                    width="44px"
+                    height="44px"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
                   >
                     <path
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"
                     ></path>
                   </svg>

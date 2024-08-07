@@ -12,7 +12,7 @@ import Ts from "../assets/logos/Ts.png";
 
 const ParallaxItem = ({ image, text, direction }) => {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    //threshold: 0.1,
     triggerOnce: false,
   });
 

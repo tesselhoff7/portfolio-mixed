@@ -22,12 +22,12 @@ const resources = {
       p1_role:
         "Led Development on the Admin Panel Web App, Assisted in Mobile App Development",
       p1_stack:
-        "React, React Native, MongoDB, Moleculer, Firebase, React Query, Zustand",
+        "React, React Native, MongoDB, Moleculer, Firebase, React Query, Zustand, Google Maps API, Insomnia",
       p1_date: "January - June 2024",
 
       p2_name: "Gideb",
       p2_desc:
-        "Mobile Meet-up App. React Native, React, Firebase, Google Maps API, ",
+        "Mobile Meet-up App. React Native, React, Firebase, Google Maps API, Insomnia",
       p2_role: "Led Development",
       p2_stack: "React Native, React, Firebase",
       p2_date: "August 2023 - January 2024",

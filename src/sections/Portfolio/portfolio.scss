@@ -50,11 +50,11 @@
 
       .imageContainer {
         //flex: 1;
-        height: 35%;
+        height: 50%;
 
         @include mobile {
           width: 100%;
-          //max-height: 300px;
+          height: 35%;
         }
 
         img {
@@ -113,7 +113,7 @@
         }
         @include mobile {
           transform: none !important;
-          padding: 0 20px;
+          padding: 20px;
           align-items: center;
           text-align: left;
         }

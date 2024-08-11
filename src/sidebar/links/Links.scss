@@ -4,3 +4,30 @@ a {
   text-decoration: none;
   color: var(--text-color);
 }
+
+.settings-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .theme-btn {
+    all: unset;
+    position: relative;
+  }
+}
+
+.language-switch p {
+  font-weight: 500;
+  color: var(--text-color);
+  position: relative;
+  //animation: pulse 2.5s infinite;
+}
+
+.eng p {
+  animation-delay: 0s; /* No delay for ENG button */
+}
+
+.kr p {
+  animation-delay: 1s; /* Delay for KR button to create alternating effect */
+}

@@ -114,9 +114,9 @@ function Hero() {
             >
               <p>KR</p>
             </button>
-            <button className="lang-button" onClick={test}>
+            {/*<button className="lang-button" onClick={test}>
               test
-            </button>
+            </button>*/}
           </div>
         </div>
       </div>

@@ -9,18 +9,18 @@ const Navbar = () => {
 
   const [language, setLanguage] = useState("en");
 
-  //useEffect(() => {
-  //  const root = document.getElementById("lang-version");
+  useEffect(() => {
+    const root = document.getElementById("lang-version");
 
-  //  if (language === "en") {
-  //    root.style.setProperty("--font-family", '"DM Sans", sans-serif');
-  //  } else {
-  //    root.style.setProperty(
-  //      "--font-family",
-  //      '"Malgun Gothic", "Apple SD Gothic Neo", "Dotum", "Gulim", sans-serif'
-  //    );
-  //  }
-  //}, [language]);
+    if (language === "en") {
+      root.style.setProperty("--font-family", '"DM Sans", sans-serif');
+    } else {
+      root.style.setProperty(
+        "--font-family",
+        '"Malgun Gothic", "Apple SD Gothic Neo", "Dotum", "Gulim", sans-serif'
+      );
+    }
+  }, [language]);
 
   //const toggleLanguage = () => {
   //  setLanguage((prevLanguage) => (prevLanguage === "en" ? "ko" : "en"));

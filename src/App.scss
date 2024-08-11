@@ -40,10 +40,20 @@ p {
   padding: 0;
 }
 
-h2,
-h3,
-p {
-  font-family: "Do Hyeon", monospace;
+.en {
+  h2,
+  h3,
+  p {
+    font-family: "Roboto Mono", monospace;
+  }
+}
+
+.kr {
+  h2,
+  h3,
+  p {
+    font-family: "Do Hyeon", monospace;
+  }
 }
 
 h1,
@@ -56,10 +66,20 @@ h3 {
   font-size: 20px;
 }
 
-h1,
-a {
-  font-family: "Do Hyeon", sans-serif;
-  font-size: 32px;
+.en {
+  h1,
+  a {
+    font-family: "Rubik", sans-serif;
+    font-size: 32px;
+  }
+}
+
+.kr {
+  h1,
+  a {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 32px;
+  }
 }
 
 p {

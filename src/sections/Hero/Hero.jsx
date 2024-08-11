@@ -55,11 +55,33 @@ function Hero() {
 
     fetchFileSize(resume_eng, setEngFileSize);
     fetchFileSize(resume_kr, setKrFileSize);
+
+    const root = document.getElementById("lang-version");
+
+    if (root) {
+      root.className = "en";
+    }
   }, []);
 
   const getTranslation = (key) => {
     const translated = t(key);
     return translated === key ? "" : translated;
+  };
+
+  const toggleLanguage = (lang) => {
+    console.log("LANG = ===", lang);
+    const root = document.getElementById("lang-version");
+    i18n.changeLanguage(lang);
+
+    if (root) {
+      root.className = lang;
+    }
+  };
+
+  const test = () => {
+    const root = document.getElementById("lang-version");
+
+    root.className = "test";
   };
 
   return (
@@ -82,15 +104,18 @@ function Hero() {
             </button>
             <button
               className="language-switch eng"
-              onClick={() => i18n.changeLanguage("en")}
+              onClick={() => toggleLanguage("en")}
             >
               <p>ENG</p>
             </button>
             <button
               className="language-switch kr"
-              onClick={() => i18n.changeLanguage("kr")}
+              onClick={() => toggleLanguage("kr")}
             >
               <p>KR</p>
+            </button>
+            <button className="lang-button" onClick={test}>
+              test
             </button>
           </div>
         </div>

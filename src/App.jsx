@@ -41,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div id="lang-version">
       <AnimatedCursor
         innerSize={20}
         outerSize={30}
@@ -89,7 +89,7 @@ function App() {
       </section>
 
       {/*<Footer />*/}
-    </>
+    </div>
   );
 }
 

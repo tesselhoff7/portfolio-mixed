@@ -93,7 +93,7 @@ function Hero() {
             className="hero"
             alt="Profile picture of Harris Johnsen"
           />
-          <div className="inner-btns">
+          {/*<div className="inner-btns">
             <button className="hidden-btn">
               <img
                 className="colorMode"
@@ -114,10 +114,7 @@ function Hero() {
             >
               <p>KR</p>
             </button>
-            {/*<button className="lang-button" onClick={test}>
-              test
-            </button>*/}
-          </div>
+          </div>*/}
         </div>
       </div>
       <div className="info">

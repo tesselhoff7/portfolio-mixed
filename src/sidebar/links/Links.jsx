@@ -3,6 +3,7 @@ import "./Links.scss";
 import { useTheme } from "../../common/ThemeContext";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
+import { useTranslation } from "react-i18next";
 
 const variants = {
   open: {
@@ -32,8 +33,19 @@ const itemVariants = {
 const Links = () => {
   const items = ["Homepage", "Services", "Contact"];
   const { theme, toggleTheme } = useTheme();
+  const { t, i18n } = useTranslation();
 
   const themeIcon = theme === "light" ? sun : moon;
+
+  const toggleLanguage = (lang) => {
+    console.log("LANG = ===", lang);
+    const root = document.getElementById("lang-version");
+    i18n.changeLanguage(lang);
+
+    if (root) {
+      root.className = lang;
+    }
+  };
   //TODO: REFACTOR
   return (
     <motion.div className="links" variants={variants}>

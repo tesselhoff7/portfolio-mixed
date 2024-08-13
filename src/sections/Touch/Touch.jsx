@@ -116,7 +116,7 @@ const Touch = () => {
           <input type="text" required placeholder="Name" name="user_name" />
           <input type="email" required placeholder="Email" name="user_email" />
           <textarea rows={8} placeholder="Message" name="message" />
-          <button>Submit</button>
+          <button className="main-button">Submit</button>
           {error && "Error"}
           {success && "Success"}
         </motion.form>

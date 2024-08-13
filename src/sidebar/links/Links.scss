@@ -11,23 +11,40 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  padding: 20px 40px;
+  //border-top: 1px solid var(--form-text-color);
+  //border-bottom: 1px solid var(--form-text-color);
+
   .theme-btn {
     all: unset;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .colorMode {
+      width: 25px;
+    }
+  }
+
+  .language-switch {
+    background-color: transparent;
+    border: none;
   }
 }
 
 .language-switch p {
   font-weight: 500;
   color: var(--text-color);
-  position: relative;
+
+  //position: relative;
   //animation: pulse 2.5s infinite;
 }
 
-.eng p {
-  animation-delay: 0s; /* No delay for ENG button */
-}
+//.eng p {
+//  animation-delay: 0s; /* No delay for ENG button */
+//}
 
-.kr p {
-  animation-delay: 1s; /* Delay for KR button to create alternating effect */
-}
+//.kr p {
+//  animation-delay: 1s; /* Delay for KR button to create alternating effect */
+//}
